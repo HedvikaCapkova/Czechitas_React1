@@ -1,27 +1,31 @@
-const Movie = ({ id, title, url, posterUrl, genres, year }) => {
-    return `
-        <div class="movie">
-          <img class="movie__img" src=${posterUrl} alt="Vykoupení z věznice Shawshank">
-          <h2 class="movie__title">${title}</h2>
-          <p class="movie__year">${year}</p>
-          <p class="movie__genre">${genres}</p>
-        </div>
-    `;
-};
+import { Movie } from "/Movie.js";
 
-const showMovies = (items) => {
-    document.querySelector('#movies').innerHTML = items.map((item) => {
-        return Movie(item);
-    }).join('');
-}
+let movieList = document.querySelector('#movies');
+let ascButton = document.querySelector(".asc");
+let dscButton = document.querySelector(".desc");
 
-const getMovie = () => {fetch('https://apps.kodim.cz/daweb/trening-api/apis/movie-api/movies')
+const showMovies = (movieOrder) => {fetch('https://apps.kodim.cz/daweb/trening-api/apis/movie-api/movies')
 .then((resp) => resp.json())
-.then((data) => showMovies(data));
+.then((data) => {
+    data.sort((first, second) => first.title.toUpperCase() < second.title.toUpperCase() ? -1 : 0)
+
+    data.forEach(movie => {
+        movieList.innerHTML += Movie(movie);   
+    });
+
+    // movieList.innerHTML = data.map((element) => {
+    //     return Movie(element);
+    // }).join('');
+
+});
+
 };
+showMovies();
 
-getMovie();
+ascButton.onClick = showMovies();
 
+data.sort((a, b) => a.value - b.value)
 
+// funkce bude mit sort type
 
 

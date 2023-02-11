@@ -17,6 +17,14 @@ h1 {
   text-align: center;
 }
 
+.sort-button {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 2rem;
+  padding-bottom: 30px;
+}
+
 #movies {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -35,10 +43,11 @@ h1 {
   font-size: 1rem;
   color: navy;
   margin-bottom: 0.4rem;
+  text-decoration: initial;
 }
 
-.movie__title a {
-  color: navy;
+.movie__title:hover {
+  text-decoration: underline;
 }
 
 .movie__year {
