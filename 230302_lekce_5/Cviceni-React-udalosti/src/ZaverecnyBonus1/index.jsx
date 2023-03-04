@@ -4,5 +4,5 @@ import React from 'react'
 // Zadání 2: Pokud uživatel z textového políčka vše smaže, vypiš „Uživatel nenapsal nic“.
 
 export const ZaverecnyBonus1 = () => {
-	return <input />
+	return <input onChange={(e) => {console.log(e.target.value ? `Uživatel napsal: ${e.target.value}` : `Uživatel nenapsal nic`)}}/>
 }

@@ -34,3 +34,8 @@ textarea {
     filter: invert(100%);
   }
 }
+
+.polozka {
+  display: flex;
+  column-gap: 1ex;
+}
