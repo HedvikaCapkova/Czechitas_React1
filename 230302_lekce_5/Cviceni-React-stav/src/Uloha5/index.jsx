@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './hamburger.css'
+import "./hamburger.css";
 
 // Zadání 1: Přichystej si stavovou proměnnou s výchozí hodnotou `false`, ve které bude uloženo, jestli je menu otevřené nebo nikoliv.
 // Zadání 2: Po kliknutí na button změň stav z `true` na `false` nebo obráceně.
@@ -7,32 +7,36 @@ import './hamburger.css'
 // Zadání 4: Pokud je menu zavřené nech mu jen třídu `hamburger`. Pro otevřené přidej navíc `hamburger--otevrene`.
 
 export const Uloha5 = () => {
-	const [menu, setMenu] = useState(false)
+  const [menu, setMenu] = useState(false);
 
-	return (
-		<>
-			<button className={`hamburger ${menu ? "hamburger--otevrene" : ""}`} aria-label="menu"
-			onClick={() => {setMenu(!menu)}}>
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
-			{menu && (
-				<ul>
-				<li>
-					<a href="#o-nas">O nás</a>
-				</li>
-				<li>
-					<a href="#co-delame">Co děláme</a>
-				</li>
-				<li>
-					<a href="#kontakty">Kontakty</a>
-				</li>
-				<li>
-					<a href="#cenik">Ceník</a>
-				</li>
-			</ul>)}
-			
-		</>
-	)
-}
+  return (
+    <>
+      <button
+        className={`hamburger ${menu ? "hamburger--otevrene" : ""}`}
+        aria-label="menu"
+        onClick={() => {
+          setMenu(!menu);
+        }}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      {menu && (
+        <ul>
+          <li>
+            <a href="#o-nas">O nás</a>
+          </li>
+          <li>
+            <a href="#co-delame">Co děláme</a>
+          </li>
+          <li>
+            <a href="#kontakty">Kontakty</a>
+          </li>
+          <li>
+            <a href="#cenik">Ceník</a>
+          </li>
+        </ul>
+      )}
+    </>
+  );
+};
