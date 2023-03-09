@@ -5,10 +5,15 @@ import './style.css';
 const App = () => {
   const [userName, setUserName] = useState('');
   const [country, setCountry] = useState('Česká republika');
+  const [checkbox, setCheckbox] = useState(true);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Uživatel ${userName} ze země ${country} se chce zaregistrovat.`);
+    alert(
+      `Uživatel ${userName} ze země ${country} se chce zaregistrovat a ${
+        checkbox ? 'dostávat pravidelně novinky' : 'o novinky nemá zájem'
+      }.`
+    );
   };
 
   return (
@@ -25,7 +30,11 @@ const App = () => {
       </label>
 
       <label>
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          checked={checkbox}
+          onChange={(e) => setCheckbox(e.target.checked)}
+        />
         Chci pravidelně dostávat novinky do mé e-mailové schránky.
       </label>
 
