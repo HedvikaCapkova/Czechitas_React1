@@ -30,11 +30,8 @@ export const Uloha6 = () => {
   const ukoly = ['Zamést', 'Pověsit prádlo', 'Umýt okna', 'Vynést koš'];
   return ukoly.map((ukol, i) => {
     return (
-      <ul>
-        <Ukol
-          key={i}
-          nazev={ukol}
-        />
+      <ul key={i}>
+        <Ukol nazev={ukol} />
       </ul>
     );
   });
