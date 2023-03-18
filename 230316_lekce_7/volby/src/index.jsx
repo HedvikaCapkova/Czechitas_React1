@@ -6,6 +6,7 @@ import './style.css';
 const App = () => {
   const [candidates, setCandidates] = useState([]);
   const [president, setPresident] = useState(null);
+  const [photo, setPhoto] = useState(null);
 
   useEffect(
     () =>
@@ -18,8 +19,9 @@ const App = () => {
     []
   );
 
-  const handleVote = (name) => {
-    setPresident(name);
+  const handleVote = (jmeno, fotka) => {
+    setPresident(jmeno);
+    setPhoto(fotka);
   };
 
   return (
@@ -30,6 +32,12 @@ const App = () => {
           <h1>Nový prezident</h1>
           <p className="castle__president">
             {president === null ? 'Vyberte svého kandidáta' : president}
+            {photo === null ? null : (
+              <img
+                width="200"
+                src={photo}
+              />
+            )}
           </p>
         </div>
       </div>

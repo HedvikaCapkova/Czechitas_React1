@@ -3,7 +3,7 @@ import './style.css';
 
 const Candidate = ({ name, avatar, onVote }) => {
   const handleClick = () => {
-    onVote(name);
+    onVote(name, avatar);
   };
   return (
     <div className="candidate">
