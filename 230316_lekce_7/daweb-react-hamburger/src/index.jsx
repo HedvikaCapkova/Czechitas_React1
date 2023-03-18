@@ -2,17 +2,16 @@ import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
 
-const MenuItem = (props, onSelect, page) => {
+const MenuItem = ({ text, onSelect }) => {
   const handleClick = () => {
-    console.log('g');
-    onSelect(page);
+    onSelect(text, text);
   };
   return (
     <a
       onClick={handleClick}
       href="#"
       className="menu-item">
-      {props.text}
+      {text}
     </a>
   );
 };
@@ -21,10 +20,9 @@ const App = () => {
   const [menuOpened, setMenuOpened] = useState(true);
   const [pageTitle, setPageTitle] = useState('Domů');
 
-  const handleSelectItem = (page) => {
-    setMenuOpened(false);
+  const handleSelectItem = (menuOpened, page) => {
+    setMenuOpened(!menuOpened);
     setPageTitle(page);
-    console.log('ahoj');
   };
 
   return (
