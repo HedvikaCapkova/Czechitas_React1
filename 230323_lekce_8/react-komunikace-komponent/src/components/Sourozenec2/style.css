@@ -1,0 +1,14 @@
+.sourozenec2 {
+	margin: 30px 0;
+	padding: 20px;
+	border: 3px solid orange;
+	background: lightgoldenrodyellow;
+}
+
+.sourozenec2 :first-child {
+	margin-top: 0;
+}
+
+.sourozenec2 :last-child {
+	margin-bottom: 0;
+}
