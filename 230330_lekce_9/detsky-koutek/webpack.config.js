@@ -37,19 +37,18 @@ module.exports = {
         test: /\.(png|jpe?g|svg|gif)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'img/[name]-[contenthash:6].[ext]'
+          filename: 'img/[name]-[contenthash:6].[ext]',
         },
-      }
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
+      base: '/',
     }),
     new CopyPlugin({
-      patterns: [
-        { from: 'public', to: '', noErrorOnMissing: true },
-      ],
+      patterns: [{ from: 'public', to: '', noErrorOnMissing: true }],
     }),
   ],
 };
