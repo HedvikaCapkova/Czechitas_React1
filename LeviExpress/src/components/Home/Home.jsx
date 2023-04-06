@@ -1,5 +1,5 @@
 import React from 'react';
-import { JourneyPicker } from '../JourneyPicker';
+import { JourneyPicker } from '../JourneyPicker/JourneyPicker';
 
 export const Home = () => (
   <main>
