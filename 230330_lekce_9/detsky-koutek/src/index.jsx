@@ -3,27 +3,53 @@ import { createRoot } from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
-  Link,
+  NavLink,
   Outlet,
 } from 'react-router-dom';
 import { About } from './pages/About/About';
 import { Home } from './pages/Home/Home';
 import { Contact } from './pages/Contact/Contact';
-import { ErrorPage } from './pages/ErrorPage/ErrorPage';
-import './style.css';
 import { CentersPage } from './pages/CentersPage/CentersPage';
+import { ErrorPage } from './pages/ErrorPage/ErrorPage';
+import { CenterDetail } from './pages/CenterDetail/CenterDetail';
+
+import './style.css';
 
 const App = () => {
   return (
     <div className="container">
       <nav>
-        <Link to="/home">Home</Link>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isActive ? 'active' : isPending ? 'pending' : ''
+          }
+          to="/home">
+          Home
+        </NavLink>
         <span> | </span>
-        <Link to="/about">About</Link>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isActive ? 'active' : isPending ? 'pending' : ''
+          }
+          to="/about">
+          About
+        </NavLink>
         <span> | </span>
-        <Link to="/contact">Contact</Link>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isActive ? 'active' : isPending ? 'pending' : ''
+          }
+          to="/contact">
+          Contact
+        </NavLink>
         <span> | </span>
-        <Link to="/centers">Pobočky</Link>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isActive ? 'active' : isPending ? 'pending' : ''
+          }
+          to="/centers">
+          Pobočky
+        </NavLink>
       </nav>
       <Outlet />
 
@@ -40,12 +66,15 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
+      { path: '/', element: <Home /> },
       { path: 'home', element: <Home /> },
-
       { path: 'about', element: <About /> },
-
       { path: 'contact', element: <Contact /> },
-      { path: 'centers', element: <CentersPage /> },
+      {
+        path: 'centers',
+        element: <CentersPage />,
+        children: [{ path: ':id', element: <CenterDetail /> }],
+      },
     ],
   },
 ]);

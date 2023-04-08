@@ -1,18 +1,24 @@
-import React, { useParams } from 'react';
+import React from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 import { getAllCenters } from './../../centers';
 
 export const CentersPage = () => {
-  const { centerId } = useParams();
-  const centerData = center.find((c) => c.id === centerId);
-
-  getAllCenters().map((center) => {
-    console.log(center.id);
-    return (
-      <div>
-        <div>
-          {center.name} {center.address}
-        </div>
+  return (
+    <div className="centers">
+      <div className="centersPage">
+        {getAllCenters().map((center) => (
+          <div key={center.id}>
+            <NavLink
+              className={({ isActive, isPending }) =>
+                isActive ? 'active' : isPending ? 'pending' : ''
+              }
+              to={center.id}>
+              {center.name}
+            </NavLink>
+          </div>
+        ))}
       </div>
-    );
-  });
+      <Outlet />
+    </div>
+  );
 };

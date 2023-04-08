@@ -9,21 +9,63 @@ html {
 }
 
 .container {
-  max-width: 26rem;
+  max-width: 40rem;
   margin-right: auto;
   margin-left: auto;
 }
 
-header {
+nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
   align-items: center;
-  margin-top: 4rem;
 }
 
-.logo {
-  width: 10rem;
-  height: 10rem;
-  background-image: url(./img/rocket.svg);
-  background-size: contain;
+.centers {
+  display: flex;
+  padding-top: 20px;
+  
+  
+}
+.centersPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  white-space: nowrap;
+  padding-right: 10px;
+}
+.centerDetail{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+a {
+  text-decoration: none;
+  border-radius: 0.4rem;
+  padding: 3px;
+}
+
+a:hover{
+  background-color: rgb(76, 2, 173);
+  color: white;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+ 
+}
+
+.active {
+
+  background-color: rgb(4, 4, 173);
+  color: white;
+}
+
+.pending {
+  background-color: rgb(23, 2, 116);
+  color: white;
 }
