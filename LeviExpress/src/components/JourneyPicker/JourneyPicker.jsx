@@ -3,27 +3,37 @@ import mapImage from './img/map.svg';
 import './JourneyPicker.css';
 
 const CityOptions = ({ cities }) => {
-  return cities.map((city) => {
-    return (
-      <option
-        key={city.code}
-        value={city.name}>
-        {city.name}
-      </option>
-    );
-  });
+  return (
+    <>
+      <option value={''}>Vyberte</option>
+      {cities.map((city) => {
+        return (
+          <option
+            key={city.name}
+            value={city.name}>
+            {city.name}
+          </option>
+        );
+      })}
+    </>
+  );
 };
 
 const DatesOptions = ({ dates }) => {
-  return dates.map((date) => {
-    return (
-      <option
-        key={date.dateBasic}
-        value={date.dateBasic}>
-        {date.dateCs}
-      </option>
-    );
-  });
+  return (
+    <>
+      <option value={''}>Vyberte</option>
+      {dates.map((date) => {
+        return (
+          <option
+            key={date.dateBasic}
+            value={date.dateBasic}>
+            {date.dateCs}
+          </option>
+        );
+      })}
+    </>
+  );
 };
 
 export const JourneyPicker = ({ onJourneyChange }) => {
@@ -82,7 +92,8 @@ export const JourneyPicker = ({ onJourneyChange }) => {
           <div className="journey-picker__controls">
             <button
               className="btn"
-              type="submit">
+              type="submit"
+              disabled={(fromCity && toCity && date) === ''}>
               Vyhledat spoj
             </button>
           </div>
