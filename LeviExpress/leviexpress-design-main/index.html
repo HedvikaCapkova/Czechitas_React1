@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>LeviExpress</title>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="container">
+        <h1 class="site-title">
+          <a href="/">LeviExpress</a>
+        </h1>
+      </div>
+    </header>
+    
+    <div class="journey-picker container">
+      <h2 class="journey-picker__head">Kam chcete jet?</h2>
+      <div class="journey-picker__body">
+        <form class="journey-picker__form">
+          <label>
+            <div class="journey-picker__label">Odkud:</div>
+            <select>
+              <option value="">Vyberte</option>
+              <option value="Mesto1">Město 1</option>
+              <option value="Mesto2">Město 2</option>
+              <option value="Mesto3">Město 3</option>
+              <option value="Mesto4">Město 4</option>
+            </select>
+          </label>
+          <label>
+            <div class="journey-picker__label">Kam:</div>
+            <select>
+              <option value="">Vyberte</option>
+              <option value="Mesto1">Město 1</option>
+              <option value="Mesto2">Město 2</option>
+              <option value="Mesto3">Město 3</option>
+              <option value="Mesto4">Město 4</option>
+            </select>
+          </label>
+          <label>
+            <div class="journey-picker__label">Datum:</div>
+            <select>
+              <option value="">Vyberte</option>
+              <option>20.05.2021</option>
+              <option>21.05.2021</option>
+              <option>22.05.2021</option>
+              <option>23.05.2021</option>
+            </select>
+          </label>
+          <div class="journey-picker__controls">
+            <button class="btn" type="submit">Vyhledat spoj</button>
+          </div>
+        </form>
+        <img class="journey-picker__map" src="img/map.svg" />
+      </div>
+    </div>
+    
+    <div class="journey-detail container">
+      <h2>Podrobnosti cesty</h2>
+      <div class="stops">
+        <div class="bus-stop">
+          <div class="bus-stop__bullet"></div>
+          <div class="bus-stop__place">
+            <div class="bus-stop__city">Město 1</div>
+            <div class="bus-stop__station">Zastávka</div>
+          </div>
+          <div class="bus-stop__departure">10:45</div>
+        </div>
+        <div class="bus-stop">
+          <div class="bus-stop__bullet"></div>
+          <div class="bus-stop__place">
+            <div class="bus-stop__city">Město 2</div>
+            <div class="bus-stop__station">Zastávka</div>
+          </div>
+          <div class="bus-stop__departure">10:45</div>
+        </div>
+        <div class="bus-stop">
+          <div class="bus-stop__bullet"></div>
+          <div class="bus-stop__place">
+            <div class="bus-stop__city">Město 3</div>
+            <div class="bus-stop__station">Zastávka</div>
+          </div>
+          <div class="bus-stop__departure">10:45</div>
+        </div>
+        <div class="bus-stop">
+          <div class="bus-stop__bullet"></div>
+          <div class="bus-stop__place">
+            <div class="bus-stop__city">Město 4</div>
+            <div class="bus-stop__station">Zastávka</div>
+          </div>
+          <div class="bus-stop__departure">10:45</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="selected-seat container">
+      <h2>Vaše sedadlo</h2>
+      <svg class="seat seat--auto" viewBox="0 0 100 100" role="button">
+        <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+        <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+        <text class="seat__text" x="55" y="65">26</text>
+      </svg>
+    </div>
+
+    <div class="seat-picker container">
+      <h2>Vyberte sedadlo</h2>
+      <div class="seats">
+        <div className="seat-row">
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">33</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">29</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">25</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">21</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">17</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">13</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">9</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">5</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">1</text>
+          </svg>
+        </div>
+
+        <div className="seat-row">
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">34</text>
+          </svg>
+
+          <svg class="seat seat--occupied" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">30</text>
+          </svg>
+
+          <svg class="seat seat--selected" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">26</text>
+          </svg>
+
+          <svg class="seat seat--occupied" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">22</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">18</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">14</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">10</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">6</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">2</text>
+          </svg>
+        </div>
+
+        <div className="seat-row">
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">35</text>
+          </svg>
+        </div>
+
+        <div className="seat-row">
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">36</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">31</text>
+          </svg>
+
+          <svg class="seat seat--occupied" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">27</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">23</text>
+          </svg>
+
+          <svg class="seat seat--occupied" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">19</text>
+          </svg>
+
+          <svg class="seat seat--occupied" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">15</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">11</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">7</text>
+          </svg>
+
+          <svg class="seat seat--occupied" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">3</text>
+          </svg>
+        </div>
+
+        <div className="seat-row">
+          <svg class="seat seat--occupied" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">37</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">32</text>
+          </svg>
+
+          <svg class="seat seat--occupied" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">28</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">24</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">20</text>
+          </svg>
+
+          <svg class="seat" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">16</text>
+          </svg>
+
+          <svg class="seat seat--occupied" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">12</text>
+          </svg>
+
+          <svg class="seat seat--occupied" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">8</text>
+          </svg>
+
+          <svg class="seat seat--occupied" viewBox="0 0 100 100" role="button">
+            <rect class="seat__rect" width="80" height="80" x="14" y="10" rx="15" ry="15" />
+            <path class="seat__path" d="M 65,10 H 25 C 5,35 5,65 25,90 H 65" />
+            <text class="seat__text" x="55" y="65">4</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls container">
+      <button class="btn btn--big" type="button">Rezervovat</button>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-title">LeviExpress</div>
+        <div class="copyright">Czechitas Digitální akademie: Web, © 2021 - 2022</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
