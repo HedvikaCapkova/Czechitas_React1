@@ -13,6 +13,7 @@ export const Reservation = () => {
   }, []);
 
   if (reservation) {
+    const { date, fromCity, toCity, seatNumber } = reservation.results;
     return (
       <div className="reservation container">
         <h2>Vaše e-jízdenka č. {id}</h2>
@@ -26,16 +27,14 @@ export const Reservation = () => {
           </div>
 
           <div className="reservation__info">
-            <p>{reservation.results.date}</p>
+            <p>{date}</p>
             <p>
-              {reservation.results.fromCity.name},{' '}
-              {reservation.results.fromCity.time}
+              {fromCity.name}, {fromCity.time}
             </p>
             <p>
-              {reservation.results.toCity.name},{' '}
-              {reservation.results.toCity.time}
+              {toCity.name}, {toCity.time}
             </p>
-            <p>{reservation.results.seatNumber}</p>
+            <p>{seatNumber}</p>
           </div>
         </div>
       </div>

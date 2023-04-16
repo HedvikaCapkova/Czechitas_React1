@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { JourneyPicker } from '../JourneyPicker/JourneyPicker';
 import { JourneyDetail } from '../JourneyDetail/JourneyDetail';
-import { SelectedSeat } from '../SelectedSeat/SelectedSeat';
+import { SeatPicker } from '../SeatPicker/SeatPicker';
 import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
@@ -33,7 +33,7 @@ export const Home = () => {
     <>
       <JourneyPicker onJourneyChange={handleJourneyChange} />
       {journeyResult && <JourneyDetail journeyResult={journeyResult} />}
-      {journeyResult && <SelectedSeat number={journeyResult} />}
+      {journeyResult && <SeatPicker number={journeyResult} />}
       {journeyResult && (
         <div className="controls container">
           <button
