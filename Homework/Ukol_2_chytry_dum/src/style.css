@@ -1,0 +1,60 @@
+/* Google font Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;400;600&display=swap');
+
+/* Moderní box model */
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+body {
+	display: grid;
+	place-content: center;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Sans Mono', monospace;
+	background: #013565 url('house.jpg') center/cover no-repeat ;
+}
+
+.container {
+	display: flex;
+}
+
+
+
+
+
+
+/* detail */
+
+.detail {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/* background: #013565 url('/images/header-bg.jpg') center/cover no-repeat; */
+}
+
+.detail-inner {
+	width: 400px;
+	min-height: 300px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.detail-ikona {
+	text-align: center;
+}
+
+.detail-ikona img {
+	width: 80px;
+}
+
+.detail-nazev {
+	text-align: center;
+	margin: 30px 0;
+}
